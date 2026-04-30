@@ -95,3 +95,4 @@ D:\2°DS\DSll\HelpDesk\obj\Debug\net10.0\refint\HelpDesk.dll
 D:\2°DS\DSll\HelpDesk\obj\Debug\net10.0\HelpDesk.pdb
 D:\2°DS\DSll\HelpDesk\obj\Debug\net10.0\HelpDesk.genruntimeconfig.cache
 D:\2°DS\DSll\HelpDesk\obj\Debug\net10.0\ref\HelpDesk.dll
+D:\2°DS\DSll\HelpDesk\obj\Debug\net10.0\HelpDesk.sourcelink.json
