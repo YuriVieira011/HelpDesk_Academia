@@ -1,12 +1,102 @@
 ﻿<head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <title>Index</title>
 </head>
+
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4" style="color: #940c0c;">Bem-vindo à Academia Mr. Bombastic</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Estado de uso</th>
+                <th scope="col">Exercícios recomendados</th>
+            </tr>
+            <tr>
+                <td>Esteira</td>
+                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Caminhada, Corrida ou Trote.
+                    <br>
+                    <strong>Foco:</strong> Condicionamento cardiovascular e resistência.
+                </td>
+            </tr>
+            <tr>
+                <td>Supino</td>
+                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Supino Reto ou Inclinado.
+                    <br>
+                    <strong>Foco:</strong> Peitoral Maior, Deltoide Anterior (frente do ombro) e Tríceps.
+                </td>
+            </tr>
+            <tr>
+                <td>Leg press</td>
+                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Leg Press 45° ou Horizontal (extensão de pernas).
+                    <br>
+                    <strong>Foco:</strong> Quadríceps (frente da coxa), Glúteos e Isquiotibiais (atrás da coxa).
+                </td>
+            </tr>
+            <tr>
+                <td>Cadeira Adutora</td>
+                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Adução de quadril.
+                    <br>
+                    <strong>Foco:</strong> Músculos adutores (parte interna da coxa).
+                </td>
+            </tr>
+            <tr>
+                <td>Barra</td>
+                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Puxada Pronada, Puxada Supinada ou Puxada Neutra.
+                    <br>
+                    <strong>Foco:</strong> Latíssimo do dorso (foco em largura), Redondo maior, Bíceps braquial e parte inferior do Latíssimo do dorso.
+                </td>
+            </tr>
+            <tr>
+                <td>Puxada Alta</td>
+                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Puxada Aberta no Peito, Puxada com Triângulo ou Puxada Unilateral.
+                    <br>
+                    <strong>Foco:</strong> Latíssimo do dorso, bíceps e costas.
+                </td>
+            </tr>
+            <tr>
+                <td>Crucifixo Invertido</td>
+                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Extensão horizontal de ombros.
+                    <br>
+                    <strong>Foco:</strong> Deltoide Posterior (parte de trás do ombro) e Romboides.
+                </td>
+            </tr>
+            <tr>
+                <td>Pulley Tríceps</td>
+                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-warning">
+                    <strong>Exercícios:</strong> Tríceps Corda ou Tríceps Barra (extensão de cotovelo).
+                    <br>
+                    <strong>Foco:</strong> Tríceps Braquial.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
 </div>
