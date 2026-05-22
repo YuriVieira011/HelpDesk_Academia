@@ -8,17 +8,91 @@
     ViewData["Title"] = "Cadastro";
 }
 <h1>@ViewData["Title"]</h1>
-
+ 
+ 
 <body>
+    <!-- nome -->
     <div class="mb-3">
-        <label for="" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="" placeholder="">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" id="inputNome">
     </div>
-    <label for="" class="form-label">Password</label>
-    <input type="password" id="inputPassword5" class="form-control" aria-describedby="">
-    <div id="" class="form-text">
-        <p>Sua senha deve ter entre 8 e 20 caracteres, conter letras e números e não deve conter espaços, caracteres
-            especiais ou emojis.</p>
-            <a asp-area="" asp-controller="Home" asp-action="Verificacao" class="btn btn-primary">Enviar</a>
-        </div>
-    </body>
+    <!-- email -->
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" id="inputEmail">
+    </div>
+    <!-- senha -->
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" id="inputPassword5" class="form-control">
+    </div>
+    <!-- CEP -->
+    <div class="mb-3">
+        <label class="form-label">CEP</label>
+        <input type="text" id="inputCep" class="form-control" maxlength="9">
+    </div>
+    <!-- RG -->
+    <div class="mb-3">
+        <label class="form-label">RG</label>
+        <input type="text" id="inputRG" class="form-control" maxlength="15">
+    </div>
+    <div class="form-text">
+        <p>
+            Sua senha deve ter entre 8 e 20 caracteres,conter letras e números e não deve conter espaços, caracteres especiais ou emojis.
+        </p>
+    </div>
+    <!-- botão enviar -->
+   <a href="#"class="btn btn-primary"onclick="return validarFormulario()">Enviar</a>
+    <script>
+        // Mascara CEP
+        document.getElementById('inputCep').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/^(\d{5})(\d)/, '$1-$2');
+            e.target.value = value;
+        });
+        // Mascara RG
+        document.getElementById('inputRG').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+            value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+            value = value.replace(/\.(\d{3})(\d)/, '.$1-$2');
+            e.target.value = value;
+        });
+        //validação
+        function validarFormulario() {
+            let nome = document.getElementById('inputNome').value;
+            let email = document.getElementById('inputEmail').value;
+            let senha = document.getElementById('inputPassword5').value;
+            let cep = document.getElementById('inputCep').value;
+            let rg = document.getElementById('inputRG').value;
+            // nome
+            if (nome == "") {
+                alert("Digite o nome!");
+                return false;
+            }
+            // email
+            if (email == "") {
+                alert("Digite o email!");
+                return false;
+            }
+            // senha
+            if (senha.length < 8) {
+                alert("A senha deve ter no mínimo 8 caracteres!");
+                return false;
+            }
+            // CEP
+            if (cep.length != 9) {
+                alert("CEP inválido!");
+                return false;
+            }
+            // RG
+            if (rg.length < 7 || rg.length > 15) {
+                alert("RG inválido!");
+                return false;
+            }
+            alert("Cadastro enviado com sucesso!");
+        setTimeout(() => {window.location.href = "/Home/Index";}, 300);
+        return false;
+        }
+    </script>
+</body>

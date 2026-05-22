@@ -7,6 +7,64 @@
             crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <title>Index</title>
+    <style>
+        /* Botões */
+        .btn-vermelho {
+            background-color: var(--vermelho-principal);
+            color: var(--branco-puro);
+            font-weight: bold;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-vermelho:hover {
+            background-color: var(--vermelho-escuro);
+            color: var(--branco-puro);
+        }
+        .btn-outline-vermelho {
+            border: 2px solid var(--vermelho-principal);
+            color: var(--vermelho-principal);
+            font-weight: bold;
+            background-color: transparent;
+            transition: 0.3s;
+        }
+        .btn-outline-vermelho:hover {
+            background-color: var(--vermelho-principal);
+            color: var(--branco-puro);
+        }
+
+        /* Cards de Modalidades */
+        .card-modalidade {
+            border: none;
+            border-bottom: 4px solid var(--vermelho-principal);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .card-modalidade:hover {
+            transform: translateY(-5px);
+        }
+        .icon-box {
+            color: var(--vermelho-principal);
+            font-size: 2.5rem;
+        }
+
+        /* Seção de Planos */
+        .bg-planos {
+            background-color: var(--cinza-claro);
+        }
+        .card-plano-destaque {
+            border: 2px solid var(--vermelho-principal) !important;
+        }
+        .badge-vermelho {
+            background-color: var(--vermelho-principal);
+            color: var(--branco-puro);
+        }
+        .emuso{
+            color:#dc3545;
+        }
+        .aberto{
+            color:#198754;
+        }
+    </style>
 </head>
 
 @{
@@ -14,8 +72,12 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4" style="color: #940c0c;">Bem-vindo à Academia Mr. Bombastic</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="fw-bold text-uppercase" style="color: #dc3545;">Bem-vindo à Academia Mr. Bombastic</h1>
+    <br />
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-uppercase">Nossas <span class="text-danger">Máquinas</span></h2>
+        <div class="mx-auto bg-danger" style="width: 60px; height: 3px;"></div>
+    </div>
 
     <table class="table table-striped">
         <tbody>
@@ -26,7 +88,7 @@
             </tr>
             <tr>
                 <td>Esteira</td>
-                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-danger">Em uso <i class="bi bi-dash-circle-fill emuso"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Caminhada, Corrida ou Trote.
                     <br>
@@ -35,7 +97,7 @@
             </tr>
             <tr>
                 <td>Supino</td>
-                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-success">Livre <i class="bi bi-check-circle-fill aberto"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Supino Reto ou Inclinado.
                     <br>
@@ -44,7 +106,7 @@
             </tr>
             <tr>
                 <td>Leg press</td>
-                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-danger">Em uso <i class="bi bi-dash-circle-fill emuso"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Leg Press 45° ou Horizontal (extensão de pernas).
                     <br>
@@ -53,7 +115,7 @@
             </tr>
             <tr>
                 <td>Cadeira Adutora</td>
-                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-danger">Em uso <i class="bi bi-dash-circle-fill emuso"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Adução de quadril.
                     <br>
@@ -62,7 +124,7 @@
             </tr>
             <tr>
                 <td>Barra</td>
-                <td class="table-danger">Em uso <i style="color: #a80000;" class="bi bi-dash-circle-fill"></i></td>
+                <td class="table-danger">Em uso <i class="bi bi-dash-circle-fill emuso"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Puxada Pronada, Puxada Supinada ou Puxada Neutra.
                     <br>
@@ -71,7 +133,7 @@
             </tr>
             <tr>
                 <td>Puxada Alta</td>
-                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-success">Livre <i class="bi bi-check-circle-fill aberto"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Puxada Aberta no Peito, Puxada com Triângulo ou Puxada Unilateral.
                     <br>
@@ -80,7 +142,7 @@
             </tr>
             <tr>
                 <td>Crucifixo Invertido</td>
-                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-success">Livre <i class="bi bi-check-circle-fill aberto"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Extensão horizontal de ombros.
                     <br>
@@ -89,7 +151,7 @@
             </tr>
             <tr>
                 <td>Pulley Tríceps</td>
-                <td class="table-success">Livre <i style="color: rgb(9, 53, 0);" class="bi bi-check-circle-fill"></i></td>
+                <td class="table-success">Livre <i class="bi bi-check-circle-fill aberto"></i></td>
                 <td class="table-warning">
                     <strong>Exercícios:</strong> Tríceps Corda ou Tríceps Barra (extensão de cotovelo).
                     <br>
@@ -98,5 +160,98 @@
             </tr>
         </tbody>
     </table>
+
+    <section id="modalidades" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-uppercase">Nossas <span class="text-danger">Modalidades</span></h2>
+                <div class="mx-auto bg-danger" style="width: 60px; height: 3px;"></div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 card-modalidade text-center p-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-3">
+                                <i class="bi bi-capslock-fill"></i>
+                            </div>
+                            <h4 class="card-title fw-bold text-uppercase">Musculação</h4>
+                            <p class="card-text text-muted">Equipamentos modernos e profissionais qualificados para guiar seu treino de força.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 card-modalidade text-center p-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-3">
+                                <i class="bi bi-lightning-charge-fill"></i>
+                            </div>
+                            <h4 class="card-title fw-bold text-uppercase">Cross Training</h4>
+                            <p class="card-text text-muted">Aulas de alta intensidade para queimar calorias e melhorar seu condicionamento físico.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 card-modalidade text-center p-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-3">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+                            <h4 class="card-title fw-bold text-uppercase">Dança / Ritmos</h4>
+                            <p class="card-text text-muted">Divirta-se enquanto se exercita com as coreografias mais animadas do momento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-5 bg-planos">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-uppercase">Escolha seu <span class="text-danger">Plano</span></h2>
+                <div class="mx-auto bg-danger" style="width: 60px; height: 3px;"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5 col-lg-4">
+                    <div class="card h-100 text-center border-0 shadow-sm p-3">
+                        <div class="card-body">
+                            <h4 class="fw-bold text-uppercase text-muted">Plano Silver</h4>
+                            <h2 class="display-5 fw-bold my-3">R$ 89<span class="fs-5">,90</span></h2>
+                            <p class="text-muted">Mensal</p>
+                            <hr>
+                            <ul class="list-unstyled my-4 lh-lg">
+                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Acesso à musculação</li>
+                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Área de cardio</li>
+                                <li class="text-decoration-line-through text-muted"><i class="bi bi-x-circle-fill me-2"></i>Aulas coletivas</li>
+                                <li class="text-decoration-line-through text-muted"><i class="bi bi-x-circle-fill me-2"></i>Avaliação física inclusa</li>
+                            </ul>
+                            <a class="btn btn-vermelho w-100 text-uppercase shadow-sm" asp-area="" asp-controller="Home" asp-action="Cadastro">Assinar Agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="card h-100 text-center border-0 shadow-sm p-3">
+                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill badge-vermelho px-3 py-2 text-uppercase fw-bold">Mais Vendido</span>
+                        <div class="card-body">
+                            <h4 class="fw-bold text-uppercase text-danger">Plano Gold</h4>
+                            <h2 class="display-5 fw-bold my-3">R$ 129<span class="fs-5">,90</span></h2>
+                            <p class="text-muted">Mensal</p>
+                            <hr>
+                            <ul class="list-unstyled my-4 lh-lg">
+                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i><strong>Acesso Livre</strong> todas as áreas</li>
+                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Todas as aulas coletivas</li>
+                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>1 Avaliação física por mês</li>
+                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Leve um amigo (2x no mês)</li>
+                            </ul>
+                            <a class="btn btn-vermelho w-100 text-uppercase shadow-sm" asp-area="" asp-controller="Home" asp-action="Cadastro">Assinar Agora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <br>
 </div>

@@ -1,0 +1,38 @@
+@model HelpDeskMvc.Models.Chamado;
+
+@{
+    ViewData[index: "Title"] = "Detalhes do Chmados";
+}
+
+<div class="container mt-4">
+    <h2>Detalhes do Chamado #@Model.Id</h2>
+    <hr />
+
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            Informações do Ticket
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.Nome</h5>
+            <p class="card-text">
+                <strong>Email:</strong><br />
+                @Model.Email
+            </p>
+            <p>
+                <strong>RG:</strong><br />
+                @Model.RG
+            </p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <strong>CPF: </strong>@Model.CPF<br />
+                <strong>Data Cadastro</strong>@Model.DataCadastro.ToString(format: " dd/MM/yyyy HH:mm")<br />
+                <strong>Data Fechamento </strong>@(Model.DataFechamento.HasValue ? Model.DataFechamento.Value.ToString(format: "dd/MM/yyyy") : "Em aberto")<br />
+            </p>
+        </div>
+        <div class="card-footer text-muted">
+            @* Link para voltar à lista principal *@
+            <a asp-action="Lista" class="btn btn-secondary">Voltar para a Lista</a>
+        </div>
+    </div>
+</div>

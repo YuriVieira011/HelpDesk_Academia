@@ -1,0 +1,24 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+            integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+            crossorigin="anonymous"></script>
+    <title>Cadastro</title>
+</head>
+@{
+    ViewData["Title"] = "Login";
+}
+<h1>@ViewData["Title"]</h1>
+ 
+<body>
+    <div class="mb-3">
+        <label for="" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="" placeholder="">
+    </div>
+    <label for="" class="form-label">Password</label>
+    <input type="password" id="inputPassword5" class="form-control" aria-describedby="">
+    <div id="" class="form-text">
+        <p>Sua senha deve ter entre 8 e 20 caracteres, conter letras e números e não deve conter espaços, caracteres
+            especiais ou emojis.</p>
+            <a asp-area="" asp-controller="Home" asp-action="Verificacao" class="btn btn-primary">Enviar</a>
+        </div>
+    </body>
