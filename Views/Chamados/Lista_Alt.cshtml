@@ -1,0 +1,48 @@
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+            integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+            crossorigin="anonymous"></script>
+    @model List<HelpDeskMvc.Models.Chamado>
+    <title>Lista</title>
+</head>
+@{
+    ViewData["Alternativo"] = "Lista_Alt";
+    Layout = "~/Views/Shared/_Layout_alternativo.cshtml";
+}
+
+<body>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th></th> @* Nova coluna para o botão *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var chamado in Model)
+        {
+            <tr>
+                <td>@chamado.Id</td>
+                <td>@chamado.Nome</td>
+                <td>@chamado.Email</td>
+                <td>@chamado.CPF</td>
+                <td>@chamado.RG</td>
+                <td>
+                    @* Este link vai gerar uma URL tipo: /Chamados/Detalhes/1 *@
+                    <a asp-controller="Chamados"
+                           asp-action="Detalhes"
+                           asp-route-id="@chamado.Id"
+                           class="btn btn-danger btn-sm">
+                        Ver Detalhes
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</body>

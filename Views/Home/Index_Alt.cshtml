@@ -71,7 +71,8 @@
 </head>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Alternativo"] = "Index_Alt";
+    Layout = "~/Views/Shared/_Layout_alternativo.cshtml";
 }
 
 <div class="text-center">
@@ -209,52 +210,5 @@
         </div>
     </section>
 
-    <section id="planos" class="py-5 bg-planos">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-uppercase">Escolha seu <span class="text-danger">Plano</span></h2>
-                <div class="mx-auto bg-danger" style="width: 60px; height: 3px;"></div>
-            </div>
-
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-5 col-lg-4">
-                    <div class="card h-100 text-center border-0 shadow-sm p-3 card-plano">
-                        <div class="card-body">
-                            <h4 class="fw-bold text-uppercase text-muted">Plano Silver</h4>
-                            <h2 class="display-5 fw-bold my-3">R$ 89<span class="fs-5">,90</span></h2>
-                            <p class="text-muted">Mensal</p>
-                            <hr>
-                            <ul class="list-unstyled my-4 lh-lg">
-                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Acesso à musculação</li>
-                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Área de cardio</li>
-                                <li class="text-decoration-line-through text-muted"><i class="bi bi-x-circle-fill me-2"></i>Aulas coletivas</li>
-                                <li class="text-decoration-line-through text-muted"><i class="bi bi-x-circle-fill me-2"></i>Avaliação física inclusa</li>
-                            </ul>
-                            <a class="btn btn-vermelho w-100 text-uppercase shadow-sm" asp-area="" asp-controller="Home" asp-action="Cadastro">Assinar Agora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-5 col-lg-4">
-                    <div class="card h-100 text-center border-0 shadow-sm p-3 card-plano">
-                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill badge-vermelho px-3 py-2 text-uppercase fw-bold">Mais Vendido</span>
-                        <div class="card-body">
-                            <h4 class="fw-bold text-uppercase text-danger">Plano Gold</h4>
-                            <h2 class="display-5 fw-bold my-3">R$ 129<span class="fs-5">,90</span></h2>
-                            <p class="text-muted">Mensal</p>
-                            <hr>
-                            <ul class="list-unstyled my-4 lh-lg">
-                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i><strong>Acesso Livre</strong> todas as áreas</li>
-                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Todas as aulas coletivas</li>
-                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>1 Avaliação física por mês</li>
-                                <li><i class="bi bi-check-circle-fill text-danger me-2"></i>Leve um amigo (2x no mês)</li>
-                            </ul>
-                            <a class="btn btn-vermelho w-100 text-uppercase shadow-sm" asp-area="" asp-controller="Home" asp-action="Cadastro">Assinar Agora</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <br>
 </div>
