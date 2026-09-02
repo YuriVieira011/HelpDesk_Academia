@@ -1,7 +1,10 @@
-@model HelpDeskMvc.Models.Chamado;
+@* Destaque para os alunos: Aqui não usamos List<...>, 
+   pois recebemos apenas UM único objeto Chamado.
+*@
+@model HelpDesk.Models.Chamado
 
 @{
-    ViewData[index: "Title"] = "Detalhes do Chmados";
+    ViewData["Title"] = "Detalhes do Chamado";
 }
 
 <div class="container mt-4">
@@ -9,25 +12,24 @@
     <hr />
 
     <div class="card">
-        <div class="card-header bg-danger text-white">
+        <div class="card-header bg-primary text-white">
             Informações do Ticket
         </div>
         <div class="card-body">
-            <h5 class="card-title">@Model.Nome</h5>
+            <h5 class="card-title">@Model.Titulo</h5>
             <p class="card-text">
-                <strong>Email:</strong><br />
-                @Model.Email
-            </p>
-            <p>
-                <strong>RG:</strong><br />
-                @Model.RG
+                <strong>Descrição:</strong><br />
+                @Model.Descricao
             </p>
         </div>
         <div class="card-body">
             <p class="card-text">
-                <strong>CPF: </strong>@Model.CPF<br />
-                <strong>Data Cadastro</strong>@Model.DataCadastro.ToString(format: " dd/MM/yyyy HH:mm")<br />
-                <strong>Data Fechamento </strong>@(Model.DataFechamento.HasValue ? Model.DataFechamento.Value.ToString(format: "dd/MM/yyyy") : "Em aberto")<br />
+                <strong>Status:</strong> @Model.Status<br />
+                <strong>Data de Abertura:</strong> @Model.DataAbertura.ToString("dd/MM/yyyy HH:mm")<br />
+                <strong>Data de Fechamento:</strong>
+                @(Model.DataFechamento.HasValue
+                    ? Model.DataFechamento.Value.ToString("dd/MM/yyyy HH:mm")
+                    : "Em aberto")
             </p>
         </div>
         <div class="card-footer text-muted">

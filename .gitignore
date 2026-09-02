@@ -1,0 +1,10 @@
+# Pastas de compilação
+bin/
+obj/
+
+# Arquivos de configurações de usuário do Visual Studio / VS Code
+.vs/
+.vscode/
+
+# Configurações locais que possam conter senhas/chaves secretas
+appsettings.Development.json

@@ -21,7 +21,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Lista()
     {
         return View();
     }

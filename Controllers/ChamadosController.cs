@@ -1,59 +1,108 @@
 using Microsoft.AspNetCore.Mvc;
-using HelpDeskMvc.Models;
+using Microsoft.EntityFrameworkCore;
+using HelpDesk.Models;
+using HelpDesk.Data;
 
-namespace MiniHelpDesk.Controllers
+namespace HelpDesk.Controllers
 {
-    // Controller responsável pelo módulo de Chamados
-    // Ele recebe requisições relacionadas a /Chamados
     public class ChamadosController : Controller
     {
-        // Action padrão do módulo
-        // Quando acessamos /Chamados, essa função é executada
-        public IActionResult Lista()
+        // 🔵 Campo para acessar o banco de dados
+        private readonly AppDbContext _context;
+
+        // 🔵 Injeção do DbContext
+        public ChamadosController(AppDbContext context)
         {
-            // Lista simulado dadisos de chamados (em um cenário real, isso viria de um banco de dados)
-            var chamados = new List<Chamado>
-            {
-                  new Chamado { Id = 1, Nome = "Marcão", Email = "marcão1234@marcão.com", CPF = 1234567890, RG = 1234567890 },
-                  new Chamado { Id = 2, Nome = "Marcão", Email = "marcão1234@marcão.com", CPF = 1234567890, RG = 1234567890 },
-            };
-            // Retorna a View correspondente
-            // O ASP.NET procura automaticamente por:
-            // Views/Chamados/Index.cshtml
-            return View(chamados);
+            _context = context;
         }
 
-        // Action para exibir os detalhes de UM único chamado
-        // O parâmetro 'id' é preenchido automaticamente pelo ASP.NET através da URL
-        // Exemplo: /Chamados/Detalhes/1 -> o parâmetro 'id' valerá 1
-        public IActionResult Detalhes(int id)
+        // 📋 LISTAGEM
+        public async Task<IActionResult> Lista()
         {
-            // Por enquanto, como não temos Banco de Dados, vamos "fingir" uma busca.
-            // Criamos um objeto novo usando o ID que veio da URL.
-            var chamadoRecuperado = new Chamado
-            {
-                Id = id,
-                Nome = "Chamado Selecionado #" + id,
-                Email = "marcão1234@marcão.com",
-                CPF = 1234567890,
-                RG = 1234567890,
-            };
-
-            // Validação simples: Se o ID for zero ou negativo, simulamos um erro de "Não Encontrado"
-            if (id <= 0)
-            {
-                return NotFound(); // Retorna o erro HTTP 404 (Página não encontrada)
-            }
-
-            // Enviamos APENAS ESTE objeto para a View (não é mais uma lista!)
-            return View(chamadoRecuperado);
+            // 🔵 Busca todos os chamados no banco e converte para lista
+            var chamados = await _context.Chamados.ToListAsync();
+            return View("Lista", chamados);
         }
 
-        // Action adicional apenas para exemplo didático
-        // Será acessada por /Chamados/Sobre
+        // Redireciona `/Chamados` para `/Chamados/Lista` para evitar 404
+        public IActionResult Index()
+        {
+            return RedirectToAction(nameof(Lista));
+        }
+
+        // 📋 LISTA (compatibilidade com view Lista.cshtml)
+        /*public async Task<IActionResult> Lista()
+        {
+            var chamados = await _context.Chamados.ToListAsync();
+            return View("Lista", chamados);
+        }*/
+
+        // 🔎 DETALHES
+        public async Task<IActionResult> Detalhes(int id)
+        {
+            // 🔵 Busca o chamado pelo ID
+            var chamado = await _context.Chamados.FirstOrDefaultAsync(c => c.Id == id);
+
+            if (chamado == null)
+                return NotFound();
+
+            return View(chamado);
+        }
+
+        // 📝 FORMULÁRIO
+        public IActionResult Criar()
+        {
+            return View();
+        }
+
+        // 📝 SALVAR (POST)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Criar(Chamado model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var chamado = new Chamado
+            {
+                Titulo = model.Titulo,
+                Descricao = model.Descricao,
+                Status = "Aberto",
+                DataAbertura = DateTime.Now,
+                DataFechamento = null
+            };
+
+            _context.Chamados.Add(chamado);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Lista));
+        }
+
+        // 🔌 API
+        [HttpPost]
+        [Route("api/chamados")]
+        public async Task<IActionResult> CriarViaApi([FromBody] Chamado model)
+        {
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
+
+            var chamado = new Chamado
+            {
+                Titulo = model.Titulo,
+                Descricao = model.Descricao,
+                Status = "Aberto",
+                DataAbertura = DateTime.Now,
+                DataFechamento = null
+            };
+
+            _context.Chamados.Add(chamado);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(Detalhes), new { id = chamado.Id }, chamado);
+        }
+
         public IActionResult Sobre()
         {
-            // Também retorna uma View chamada Sobre.cshtml
             return View();
         }
     }
