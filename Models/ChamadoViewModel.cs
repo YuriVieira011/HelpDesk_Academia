@@ -9,8 +9,11 @@ namespace HelpDesk.Models
         // get -> permite ler o valor
         // set -> permite atribuir um valor
         public int Id { get; set; }
-        public required string Titulo { get; set; }
-        public required string Descricao { get; set; }
+        public required string Nome { get; set; }
+        public required string Email { get; set; }
+        public required string Senha { get; set; }
+        public required string CEP { get; set; }
+        public required string RG { get; set; }
         public string Status { get; set; } = "Aberto";
         public DateTime DataAbertura { get; set; } = DateTime.Now;
         public DateTime? DataFechamento { get; set; }

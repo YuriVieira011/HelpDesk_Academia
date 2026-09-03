@@ -49,12 +49,6 @@ namespace HelpDesk.Controllers
             return View(chamado);
         }
 
-        // 📝 FORMULÁRIO
-        public IActionResult Criar()
-        {
-            return View();
-        }
-
         // 📝 SALVAR (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -65,8 +59,11 @@ namespace HelpDesk.Controllers
 
             var chamado = new Chamado
             {
-                Titulo = model.Titulo,
-                Descricao = model.Descricao,
+                Nome = model.Nome,
+                Email = model.Email,
+                Senha = model.Senha,
+                CEP = model.CEP,
+                RG = model.RG,
                 Status = "Aberto",
                 DataAbertura = DateTime.Now,
                 DataFechamento = null
@@ -88,8 +85,11 @@ namespace HelpDesk.Controllers
 
             var chamado = new Chamado
             {
-                Titulo = model.Titulo,
-                Descricao = model.Descricao,
+                Nome = model.Nome,
+                Email = model.Email,
+                Senha = model.Senha,
+                CEP = model.CEP,
+                RG = model.RG,
                 Status = "Aberto",
                 DataAbertura = DateTime.Now,
                 DataFechamento = null
