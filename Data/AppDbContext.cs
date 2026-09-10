@@ -14,5 +14,6 @@ namespace HelpDesk.Data
 
         // Representa a tabela Chamados no banco
         public DbSet<Chamado> Chamados => Set<Chamado>();
+        public DbSet<Cadastro> Cadastros => Set<Cadastro>();
     }
 }

@@ -1,4 +1,4 @@
-﻿@model HelpDesk.Models.Chamado
+﻿@model HelpDesk.Models.Cadastro
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
@@ -73,7 +73,7 @@
 <h1>@ViewData["Title"]</h1>
 
 <body>
-    <form asp-controller="Chamados" asp-action="Criar" method="post" onsubmit="return validarFormulario()">
+    <form asp-controller="Cadastros" asp-action="Criar" method="post" onsubmit="return validarFormulario()">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="mb-3">

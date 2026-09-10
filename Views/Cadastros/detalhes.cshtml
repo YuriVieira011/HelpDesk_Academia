@@ -1,22 +1,22 @@
 @* Destaque para os alunos: Aqui não usamos List<...>, 
    pois recebemos apenas UM único objeto Chamado.
 *@
-@model HelpDesk.Models.Chamado
+@model HelpDesk.Models.Cadastro
 
 @{
-    ViewData["Title"] = "Detalhes do Chamado";
+    ViewData["Title"] = "Detalhes do Cadastro";
 }
 
 <div class="container mt-4">
-    <h2>Detalhes do Chamado #@Model.Id</h2>
+    <h2>Detalhes do Cadastro #@Model.Id</h2>
     <hr />
 
     <div class="card">
         <div class="card-header bg-primary text-white">
-            Informações do Ticket
+            Informações do Usuário
         </div>
         <div class="card-body">
-            <h5 class="card-title">@Model.Nome</h5>
+            <h3 class="card-title">@Model.Nome</h5>
             <p class="card-text">
                 <strong>Email:</strong><br />
                 @Model.Email
