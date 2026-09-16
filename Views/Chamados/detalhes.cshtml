@@ -1,14 +1,14 @@
 @* Destaque para os alunos: Aqui não usamos List<...>, 
    pois recebemos apenas UM único objeto Chamado.
 *@
-@model HelpDesk.Models.Cadastro
+@model HelpDesk.Models.Chamado
 
 @{
-    ViewData["Title"] = "Detalhes do Cadastro";
+    ViewData["Title"] = "Detalhes do Chamado";
 }
 
 <div class="container mt-4">
-    <h2>Detalhes do Cadastro #@Model.Id</h2>
+    <h2>Detalhes do Chamado #@Model.Id</h2>
     <hr />
 
     <div class="card">
@@ -18,20 +18,8 @@
         <div class="card-body">
             <h3 class="card-title">@Model.Nome</h5>
             <p class="card-text">
-                <strong>Email:</strong><br />
-                @Model.Email
-            </p>
-            <p class="card-text">
-                <strong>Senha:</strong><br />
-                @Model.Senha
-            </p>
-            <p class="card-text">
-                <strong>CEP:</strong><br />
-                @Model.CEP
-            </p>
-            <p class="card-text">
-                <strong>RG:</strong><br />
-                @Model.RG
+                <strong>Descrição:</strong><br />
+                @Model.Descricao
             </p>
         </div>
         <div class="card-body">
@@ -46,7 +34,7 @@
         </div>
         <div class="card-footer text-muted">
             @* Link para voltar à lista principal *@
-            <a asp-action="Lista" class="btn btn-secondary">Voltar para a Lista de Cadastros</a>
+            <a asp-action="Lista" class="btn btn-secondary">Voltar para a Lista de Chamados</a>
         </div>
     </div>
 </div>

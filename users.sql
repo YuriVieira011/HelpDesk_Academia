@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `cadastros` (
 
 INSERT INTO `cadastros` (`Id`, `Nome`, `Email`, `Senha`, `CEP`, `RG`, `DataAbertura`, `DataFechamento`, `Status`) VALUES
 (1, 'Teste', 'teste@teste', '236718923', '12345-67', '12.435.788-90', '2026-09-02 21:49:36', NULL, 'Aberto'),
-(2, 'Teste MEU DEUS FUNCIONOU', 'teste@teste.com', '1223121212121', '13221-21', '21.312.312-3211', '2026-09-10 18:04:33', NULL, 'Aberto');
+(2, 'Teste 2', 'teste@teste.com', '1223121212121', '13221-21', '21.312.312-3211', '2026-09-10 18:04:33', NULL, 'Aberto');
 
 -- --------------------------------------------------------
 
@@ -53,10 +53,7 @@ INSERT INTO `cadastros` (`Id`, `Nome`, `Email`, `Senha`, `CEP`, `RG`, `DataAbert
 CREATE TABLE IF NOT EXISTS `chamados` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(50) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Senha` varchar(100) NOT NULL,
-  `CEP` char(9) NOT NULL,
-  `RG` varchar(20) NOT NULL,
+  `Descricao` varchar(100) NOT NULL,
   `DataAbertura` datetime NOT NULL DEFAULT current_timestamp(),
   `DataFechamento` datetime DEFAULT NULL,
   `Status` varchar(20) NOT NULL DEFAULT 'Aberto',
@@ -67,9 +64,9 @@ CREATE TABLE IF NOT EXISTS `chamados` (
 -- Despejando dados para a tabela `chamados`
 --
 
-INSERT INTO `chamados` (`Id`, `Nome`, `Email`, `Senha`, `CEP`, `RG`, `DataAbertura`, `DataFechamento`, `Status`) VALUES
-(1, 'Teste', 'teste@teste', '236718923', '12345-67', '12.435.788-90', '2026-09-02 21:49:36', NULL, 'Aberto'),
-(2, 'Teste 2', 'testeteste@example.c', '12231321321321', '13231-23', '12.332.112-3123', '2026-09-10 17:35:56', NULL, 'Aberto');
+INSERT INTO `chamados` (`Id`, `Nome`, `Descricao`, `DataAbertura`, `DataFechamento`, `Status`) VALUES
+(1, 'Teste', 'Descrição de teste 1', '2026-09-02 21:49:36', NULL, 'Aberto'),
+(2, 'Teste 2', 'Descrição de teste 2', '2026-09-10 17:35:56', NULL, 'Aberto');
 
 COMMIT;
 

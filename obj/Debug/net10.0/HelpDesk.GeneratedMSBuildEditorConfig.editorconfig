@@ -17,13 +17,12 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
-build_property.EntryPointFilePath = 
 build_property.RootNamespace = HelpDesk
 build_property.RootNamespace = HelpDesk
 build_property.ProjectDir = D:\2DS\DSll\HelpDesk\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 10.0
+build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\2DS\DSll\HelpDesk
@@ -43,8 +42,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9zXExpc3RhX0FsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/2DS/DSll/HelpDesk/Views/Chamados/detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbWFkb3NcZGV0YWxoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2DS/DSll/HelpDesk/Views/Chamados/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbWFkb3NcTGlzdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2DS/DSll/HelpDesk/Views/Chamados/Lista_Alt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhbWFkb3NcTGlzdGFfQWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/2DS/DSll/HelpDesk/Views/Home/Cadastro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWRhc3Ryby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2DS/DSll/HelpDesk/Views/Home/FazerChamados.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGYXplckNoYW1hZG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/2DS/DSll/HelpDesk/Views/Home/Index.cshtml]

@@ -60,10 +60,7 @@ namespace HelpDesk.Controllers
             var chamado = new Chamado
             {
                 Nome = model.Nome,
-                Email = model.Email,
-                Senha = model.Senha,
-                CEP = model.CEP,
-                RG = model.RG,
+                Descricao = model.Descricao,
                 Status = "Aberto",
                 DataAbertura = DateTime.Now,
                 DataFechamento = null
@@ -86,10 +83,7 @@ namespace HelpDesk.Controllers
             var chamado = new Chamado
             {
                 Nome = model.Nome,
-                Email = model.Email,
-                Senha = model.Senha,
-                CEP = model.CEP,
-                RG = model.RG,
+                Descricao = model.Descricao,
                 Status = "Aberto",
                 DataAbertura = DateTime.Now,
                 DataFechamento = null
