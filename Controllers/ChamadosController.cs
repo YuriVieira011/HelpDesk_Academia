@@ -24,6 +24,12 @@ namespace HelpDesk.Controllers
             return View("Lista", chamados);
         }
 
+        public async Task<IActionResult> Lista_Admin()
+        {
+            var chamados = await _context.Chamados.ToListAsync();
+            return View("Lista_Admin", chamados);
+        }
+
         // Redireciona `/Chamados` para `/Chamados/Lista` para evitar 404
         public IActionResult Index()
         {
@@ -52,7 +58,7 @@ namespace HelpDesk.Controllers
         // 📝 SALVAR (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Criar(Chamado model)
+        public async Task<IActionResult> Criar(Chamado model, bool origemAdmin = false, bool origemUser = false)
         {
             if (!ModelState.IsValid)
                 return View(model);
@@ -69,7 +75,11 @@ namespace HelpDesk.Controllers
             _context.Chamados.Add(chamado);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Lista));
+            return origemAdmin
+                ? RedirectToAction(nameof(Lista))
+                : origemUser
+                    ? RedirectToAction("Index", "User")
+                    : RedirectToAction("Index", "Home");
         }
 
         // 🔌 API

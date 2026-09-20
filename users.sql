@@ -31,8 +31,7 @@ CREATE TABLE IF NOT EXISTS `cadastros` (
   `CEP` char(9) NOT NULL,
   `RG` varchar(20) NOT NULL,
   `DataAbertura` datetime NOT NULL DEFAULT current_timestamp(),
-  `DataFechamento` datetime DEFAULT NULL,
-  `Status` varchar(20) NOT NULL DEFAULT 'Aberto',
+  `User` varchar(20) NOT NULL DEFAULT 'Usuário',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -40,9 +39,9 @@ CREATE TABLE IF NOT EXISTS `cadastros` (
 -- Despejando dados para a tabela `cadastros`
 --
 
-INSERT INTO `cadastros` (`Id`, `Nome`, `Email`, `Senha`, `CEP`, `RG`, `DataAbertura`, `DataFechamento`, `Status`) VALUES
-(1, 'Teste', 'teste@teste', '236718923', '12345-67', '12.435.788-90', '2026-09-02 21:49:36', NULL, 'Aberto'),
-(2, 'Teste 2', 'teste@teste.com', '1223121212121', '13221-21', '21.312.312-3211', '2026-09-10 18:04:33', NULL, 'Aberto');
+INSERT INTO `cadastros` (`Id`, `Nome`, `Email`, `Senha`, `CEP`, `RG`, `DataAbertura`, `User`) VALUES
+(1, 'Teste', 'teste@teste', '236718923', '12345-67', '12.435.788-90', '2026-09-02 21:49:36', 'Admin'),
+(2, 'Teste 2', 'teste@teste.com', '1223121212121', '13221-21', '21.312.312-3211', '2026-09-10 18:04:33', 'Admin');
 
 -- --------------------------------------------------------
 

@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <title>Lista</title>
     @{
+        Layout = "_Layout_admin";
         ViewData["Title"] = "Lista";
     }
 
@@ -20,9 +21,8 @@
             <th>Senha</th>
             <th>CEP</th>
             <th>RG</th>
-            <th>Status</th> 
+            <th>Tipo de usuário</th>
             <th>Data de abertura</th>
-            <th>Data de fechamento</th>
             <th>Ações</th> <!-- Adicionado para alinhar com o botão -->
         </tr>
     </thead>
@@ -36,13 +36,8 @@
                 <td>@cadastro.Senha</td>
                 <td>@cadastro.CEP</td>
                 <td>@cadastro.RG</td>
-                <td>@cadastro.Status</td>
+                <td>@cadastro.User</td>
                 <td>@cadastro.DataAbertura.ToString("dd/MM/yyyy")</td>
-                <td>
-                    @(cadastro.DataFechamento.HasValue
-                    ? cadastro.DataFechamento.Value.ToString("dd/MM/yyyy HH:mm")
-                    : "Em aberto")
-                </td>
                 <td>
                     <a asp-controller="Cadastros" asp-action="Detalhes" asp-route-id="@cadastro.Id"
                        class="btn btn-primary btn-sm">

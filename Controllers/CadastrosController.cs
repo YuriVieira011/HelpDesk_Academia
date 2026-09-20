@@ -64,15 +64,14 @@ namespace HelpDesk.Controllers
                 Senha = model.Senha,
                 CEP = model.CEP,
                 RG = model.RG,
-                Status = "Aberto",
+                User = "Usuário",
                 DataAbertura = DateTime.Now,
-                DataFechamento = null
             };
 
             _context.Cadastros.Add(cadastro);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Lista));
+            return RedirectToAction("Index", "User");
         }
 
         // 🔌 API
@@ -90,9 +89,8 @@ namespace HelpDesk.Controllers
                 Senha = model.Senha,
                 CEP = model.CEP,
                 RG = model.RG,
-                Status = "Aberto",
+                User = "Usuário",
                 DataAbertura = DateTime.Now,
-                DataFechamento = null
             };
 
             _context.Cadastros.Add(cadastro);

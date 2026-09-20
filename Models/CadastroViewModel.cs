@@ -13,8 +13,7 @@ namespace HelpDesk.Models
         public required string Senha { get; set; }
         public required string CEP { get; set; }
         public required string RG { get; set; }
-        public string Status { get; set; } = "Aberto";
+        public string User { get; set; } = "Usuário";
         public DateTime DataAbertura { get; set; } = DateTime.Now;
-        public DateTime? DataFechamento { get; set; }
     }
 }

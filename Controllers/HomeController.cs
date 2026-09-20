@@ -11,21 +11,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Lista_Alt()
-    {
-        return View();
-    }
-
-    public IActionResult Index_Alt()
-    {
-        return View();
-    }
-
-    public IActionResult Lista()
-    {
-        return View();
-    }
-
     public IActionResult Login()
     {
         return View();
@@ -37,6 +22,11 @@ public class HomeController : Controller
     }
 
     public IActionResult Verificacao()
+    {
+        return View();
+    }
+
+    public IActionResult Lista()
     {
         return View();
     }
