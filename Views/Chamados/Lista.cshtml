@@ -12,40 +12,43 @@
         ViewData["Title"] = "Lista";
     }
     
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Status</th>
-            <th>Data de abertura</th>
-            <th>Data de fechamento</th>
-            <th>Ações</th> <!-- Adicionado para alinhar com o botão -->
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Chamado chamado in Model)
-        {
-            <tr>
-                <td>@chamado.Id</td>
-                <td>@chamado.Nome</td>
-                <td>@chamado.Descricao</td>
-                <td>@chamado.Status</td>
-                <td>@chamado.DataAbertura.ToString("dd/MM/yyyy")</td>
-                <td>
-                    @(chamado.DataFechamento.HasValue
-                    ? chamado.DataFechamento.Value.ToString("dd/MM/yyyy HH:mm")
-                    : "Em aberto")
-                </td>
-                <td>
-                    <a asp-controller="Chamados" asp-action="Detalhes" asp-route-id="@chamado.Id"
-                       class="btn btn-primary btn-sm">
-                        Ver Detalhes
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container mt-4">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                    <th>Data de abertura</th>
+                    <th>Data de fechamento</th>
+                    <th>Ações</th> <!-- Adicionado para alinhar com o botão -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Chamado chamado in Model)
+                {
+                    <tr>
+                        <td>@chamado.Id</td>
+                        <td>@chamado.Nome</td>
+                        <td>@chamado.Descricao</td>
+                        <td>@chamado.Status</td>
+                        <td>@chamado.DataAbertura.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @(chamado.DataFechamento.HasValue
+                            ? chamado.DataFechamento.Value.ToString("dd/MM/yyyy HH:mm")
+                            : "Em aberto")
+                        </td>
+                        <td>
+                            <a asp-controller="Chamados" asp-action="Detalhes" asp-route-id="@chamado.Id"
+                            class="btn btn-primary btn-sm">
+                                Ver Detalhes
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

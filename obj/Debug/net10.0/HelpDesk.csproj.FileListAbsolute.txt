@@ -492,9 +492,7 @@ D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\scopedcss\bundle\HelpDesk.styles.css
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\scopedcss\projectbundle\HelpDesk.bundle.scp.css
-D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\a0yjyrfx3j-{0}-b9sayid5wm-b9sayid5wm.gz
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\z7nan3r04s-{0}-61n19gt1b8-61n19gt1b8.gz
-D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\ke3f6bfd9q-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\bqmljkjg2i-{0}-bqjiyaj88i-bqjiyaj88i.gz
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\ogpr6jrh8i-{0}-c2jlpeoesf-c2jlpeoesf.gz
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\5vuzlle6d6-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -554,8 +552,6 @@ D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\hpdx1zpm1k-{0}-2z0ns9nrw6-2z0n
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\yelltl3jqc-{0}-muycvpuwrr-muycvpuwrr.gz
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\qnrfufhpjd-{0}-87fc7y1x7t-87fc7y1x7t.gz
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\xb37zqzw8s-{0}-mlv21k5csn-mlv21k5csn.gz
-D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\arji84lciv-{0}-gawf47acl3-gawf47acl3.gz
-D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\m0u9gp2rs0-{0}-gawf47acl3-gawf47acl3.gz
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\staticwebassets.build.json
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\staticwebassets.build.json.cache
 D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\staticwebassets.development.json
@@ -579,3 +575,7 @@ D:\2DS\DSll\HelpDesk\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBu
 D:\2DS\DSll\HelpDesk\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\2DS\DSll\HelpDesk\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\2DS\DSll\HelpDesk\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\ke3f6bfd9q-{0}-h7f8jpbw0b-h7f8jpbw0b.gz
+D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\arji84lciv-{0}-du5uqwen3p-du5uqwen3p.gz
+D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\m0u9gp2rs0-{0}-du5uqwen3p-du5uqwen3p.gz
+D:\2DS\DSll\HelpDesk\obj\Debug\net10.0\compressed\a0yjyrfx3j-{0}-v2vpl05q8w-v2vpl05q8w.gz

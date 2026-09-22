@@ -29,3 +29,156 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+html {
+  font-size: 14px;
+}
+ 
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+ 
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+ 
+html {
+  position: relative;
+  min-height: 100%;
+}
+ 
+body {
+  margin-bottom: 60px;
+}
+ 
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+ 
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+/* Modo escuro */
+body.dark-mode {
+  background-color: #232222;
+  color: #ffffff;
+}
+ 
+body.dark-mode header {
+  background-color: #232222;
+}
+ 
+body.dark-mode .navbar {
+  background-color: #232222 !important;
+}
+ 
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+  color: #ffffff !important;
+}
+ 
+body.dark-mode main {
+  color: #ffffff;
+}
+ 
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border-color: #555;
+}
+ 
+body.dark-mode .form-control::placeholder {
+  color: #bbbbbb;
+}
+ 
+body.dark-mode .footer {
+  color: #bbbbbb !important;
+}
+ 
+body.dark-mode .footer a {
+  color: #ffffff;
+}
+ 
+body.dark-mode .border-top,
+body.dark-mode .border-bottom {
+  border-color: #444 !important;
+}
+ 
+/* Cards do modo escuro */
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+}
+ 
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+}
+ 
+body.dark-mode .card-header {
+    background-color: #2b2b2b;
+    color: white;
+}
+ 
+body.dark-mode .card-footer {
+    background-color: #2b2b2b;
+    border-top: 1px solid #444;
+}
+ 
+body.dark-mode .card-modalidade .text-muted,
+body.dark-mode .card-plano .text-muted {
+    color: #ffffff !important;
+}
+ 
+/* Tabela modo escuro */
+body.dark-mode .table {
+    color: white;
+}
+ 
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #2b2b2b;
+}
+ 
+body.dark-mode .table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #1e1e1e;
+}
+ 
+body.dark-mode .table td,
+body.dark-mode .table th {
+    border-color: #444;
+}
+
+/* Correções para Tabela no Dark Mode */
+body.dark-mode .table {
+    --bs-table-color: #ffffff;
+    --bs-table-bg: transparent;
+    --bs-table-border-color: #444444;
+    --bs-table-striped-color: #ffffff;
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+    --bs-table-hover-color: #ffffff;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
+    color: #ffffff;
+}
+
+body.dark-mode .table th,
+body.dark-mode .table td {
+    background-color: transparent;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-bg-type: #2b2b2b;
+    color: #ffffff;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(even) > * {
+    --bs-table-bg-type: #1e1e1e;
+    color: #ffffff;
+}
