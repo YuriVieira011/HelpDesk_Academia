@@ -1,22 +1,25 @@
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-            integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-            crossorigin="anonymous"></script>
-    <title>Cadastro</title>
-</head>
+@model HelpDesk.Models.LoginViewModel
 @{
     ViewData["Title"] = "Login";
 }
+
 <h1>@ViewData["Title"]</h1>
- 
-<body>
+
+<form asp-controller="Home" asp-action="Login" method="post">
+    <input asp-for="ReturnUrl" type="hidden" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
     <div class="mb-3">
-        <label for="" class="form-label">Email</label>
-        <input type="email" class="form-control" id="" placeholder="">
+        <label asp-for="Email" class="form-label">E-mail</label>
+        <input asp-for="Email" class="form-control" autocomplete="username" />
+        <span asp-validation-for="Email" class="text-danger"></span>
     </div>
-    <label for="" class="form-label">Senha</label>
-    <input type="password" id="inputPassword5" class="form-control" aria-describedby="">
-    <div id="" class="form-text">
-            <a asp-area="" asp-controller="Home" asp-action="Verificacao" class="btn btn-primary">Enviar</a>
-        </div>
-    </body>
+
+    <div class="mb-3">
+        <label asp-for="Senha" class="form-label">Senha</label>
+        <input asp-for="Senha" class="form-control" autocomplete="current-password" />
+        <span asp-validation-for="Senha" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>

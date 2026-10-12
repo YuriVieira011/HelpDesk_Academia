@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using HelpDesk.Models;
-using HelpDesk.Data;
+using Spotter.Data;
 
 namespace HelpDesk.Controllers
 {
@@ -9,11 +10,13 @@ namespace HelpDesk.Controllers
     {
         // 🔵 Campo para acessar o banco de dados
         private readonly AppDbContext _context;
+        private readonly IPasswordHasher<Cadastro> _passwordHasher;
 
         // 🔵 Injeção do DbContext
-        public CadastrosController(AppDbContext context)
+        public CadastrosController(AppDbContext context, IPasswordHasher<Cadastro> passwordHasher)
         {
             _context = context;
+            _passwordHasher = passwordHasher;
         }
 
         // 📋 LISTAGEM
@@ -55,13 +58,20 @@ namespace HelpDesk.Controllers
         public async Task<IActionResult> Criar(Cadastro model)
         {
             if (!ModelState.IsValid)
-                return View(model);
+                return View("~/Views/Home/Cadastro.cshtml", model);
+
+            model.Email = model.Email.Trim();
+            if (await _context.Cadastros.AnyAsync(cadastro => cadastro.Email == model.Email))
+            {
+                ModelState.AddModelError(nameof(model.Email), "Já existe um cadastro com este e-mail.");
+                return View("~/Views/Home/Cadastro.cshtml", model);
+            }
 
             var cadastro = new Cadastro
             {
                 Nome = model.Nome,
                 Email = model.Email,
-                Senha = model.Senha,
+                Senha = _passwordHasher.HashPassword(model, model.Senha),
                 CEP = model.CEP,
                 RG = model.RG,
                 User = "Usuário",
@@ -82,11 +92,15 @@ namespace HelpDesk.Controllers
             if (!ModelState.IsValid)
                 return ValidationProblem(ModelState);
 
+            model.Email = model.Email.Trim();
+            if (await _context.Cadastros.AnyAsync(cadastro => cadastro.Email == model.Email))
+                return Conflict(new { message = "Já existe um cadastro com este e-mail." });
+
             var cadastro = new Cadastro
             {
                 Nome = model.Nome,
                 Email = model.Email,
-                Senha = model.Senha,
+                Senha = _passwordHasher.HashPassword(model, model.Senha),
                 CEP = model.CEP,
                 RG = model.RG,
                 User = "Usuário",
@@ -96,7 +110,16 @@ namespace HelpDesk.Controllers
             _context.Cadastros.Add(cadastro);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Detalhes), new { id = cadastro.Id }, cadastro);
+            return CreatedAtAction(nameof(Detalhes), new { id = cadastro.Id }, new
+            {
+                cadastro.Id,
+                cadastro.Nome,
+                cadastro.Email,
+                cadastro.CEP,
+                cadastro.RG,
+                cadastro.User,
+                cadastro.DataAbertura
+            });
         }
 
         public IActionResult Sobre()

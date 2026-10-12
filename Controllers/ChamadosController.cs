@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HelpDesk.Models;
-using HelpDesk.Data;
+using Spotter.Data;
 
 namespace HelpDesk.Controllers
 {

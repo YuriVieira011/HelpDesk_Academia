@@ -114,7 +114,13 @@ body.dark-mode .card {
     color: white;
     border: 1px solid #444;
 }
- 
+
+body.dark-mode .card.bg-light {
+    --bs-light-rgb: 30, 30, 30;
+    color: #ffffff;
+    border-color: #444;
+}
+
 body.dark-mode .card {
     background-color: #1e1e1e;
     color: white;

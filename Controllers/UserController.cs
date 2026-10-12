@@ -1,12 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Spotter.Data;
 
 namespace HelpDesk.Controllers;
 
 public class UserController : Controller
 {
-    public IActionResult Index()
+    private readonly AppDbContext _context;
+
+    public UserController(AppDbContext context)
     {
-        return View();
+        _context = context;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        var maquinas = await _context.Maquinas.AsNoTracking().ToListAsync();
+        return View(maquinas);
     }
 
     public IActionResult FazerChamados()

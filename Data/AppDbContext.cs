@@ -1,19 +1,27 @@
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Spotter.Models;
 using HelpDesk.Models;
 
-namespace HelpDesk.Data
+namespace Spotter.Data
 {
-    public class AppDbContext : IdentityDbContext<Usuario>
+    public class AppDbContext : DbContext
     {
-        // Construtor que recebe as opções de configuração do DbContext
-        public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options)
-        {
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        // Representa a tabela Chamados no banco
-        public DbSet<Chamado> Chamados => Set<Chamado>();
-        public DbSet<Cadastro> Cadastros => Set<Cadastro>();
+        public DbSet<Maquina> Maquinas { get; set; }
+        public DbSet<Cadastro> Cadastros { get; set; }
+        public DbSet<Chamado> Chamados { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Maquina>()
+                .ToTable("maquinas")
+                .Property(m => m.Status)
+                .HasConversion<int>()
+                .HasDefaultValue(Spotter.Models.StatusMaquina.Operacional);
+
+        }
     }
 }

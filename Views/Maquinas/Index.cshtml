@@ -1,0 +1,91 @@
+@model IEnumerable<Spotter.Models.Maquina>
+@using Spotter.Models
+
+@{
+    ViewData["Title"] = "Gestão de Equipamentos";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>🏋️‍♂️ Equipamentos e Máquinas</h2>
+    @if (User.IsInRole("Admin") || User.IsInRole("Professor"))
+    {
+        <a asp-action="Create" class="btn btn-primary">+ Novo Equipamento</a>
+    }
+</div>
+
+<form method="get" asp-action="Index" class="card card-body mb-4 bg-light">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control" placeholder="Buscar por nome ou marca..." />
+        </div>
+        <div class="col-md-4">
+            <select name="statusFiltro" class="form-select">
+                <option value="">-- Todos os Status --</option>
+                <option value="1" selected="@(ViewData["CurrentStatus"]?.ToString() == "1")">Operacional</option>
+                <option value="2" selected="@(ViewData["CurrentStatus"]?.ToString() == "2")">Em Manutenção</option>
+                <option value="3" selected="@(ViewData["CurrentStatus"]?.ToString() == "3")">Inoperante</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-secondary w-100">Filtrar</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Nº Série</th>
+            <th>Status</th>
+            <th>Última Manutenção</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="6" class="text-center text-muted">Nenhuma máquina encontrada.</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><strong>@item.Nome</strong></td>
+                    <td>@item.Marca</td>
+                    <td>@(item.NumeroSerie ?? "-")</td>
+                    <td>
+                        @if (item.Status == StatusMaquina.Operacional)
+                        {
+                            <span class="badge bg-success">Operacional</span>
+                        }
+                        else if (item.Status == StatusMaquina.EmManutencao)
+                        {
+                            <span class="badge bg-warning text-dark">Em Manutenção</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Inoperante</span>
+                        }
+                    </td>
+                    <td>@(item.UltimaManutencao.HasValue ? item.UltimaManutencao.Value.ToString("dd/MM/yyyy") : "-")</td>
+                    <td>
+                        @if (User.IsInRole("Admin") || User.IsInRole("Professor"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-success">Editar</a>
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
