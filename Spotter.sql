@@ -66,26 +66,26 @@ CREATE TABLE IF NOT EXISTS `maquinas` (
 --
 
 INSERT INTO `maquinas` (`Nome`, `Marca`, `NumeroSerie`, `Status`, `UltimaManutencao`, `Observacoes`) VALUES
-('Escavadeira Hidráulica 320', 'Caterpillar', 'CAT320X98231', 1, '2026-04-10 08:30:00.000000', 'Revisão geral realizada com troca de filtros.'),
-('Escavadeira PC200', 'Komatsu', 'KOM200Y12345', 1, '2026-03-15 14:00:00.000000', 'Funcionamento normal.'),
-('Escavadeira EC220D', 'Volvo', 'VOL220Z55443', 2, '2026-05-01 10:15:00.000000', 'Aguardando peças para manutenção hidráulica.'),
-('Motoniveladora 140K', 'Caterpillar', 'CAT140K77889', 1, '2026-02-20 09:00:00.000000', NULL),
-('Carregadeira WA380', 'Komatsu', 'KOM380A99887', 1, '2026-01-10 16:45:00.000000', 'Ótimo estado de conservação.'),
-('Carregadeira L120H', 'Volvo', 'VOL120B11223', 1, '2026-04-25 11:30:00.000000', NULL),
-('Trator de Esteira D6T', 'Caterpillar', 'CATD6T33445', 1, '2026-04-05 07:00:00.000000', 'Troca de óleo recente.'),
-('Trator D65EX', 'Komatsu', 'KOM65EX66778', 2, '2026-02-14 13:20:00.000000', 'Manutenção corretiva no sistema de direção.'),
-('Caminhão Articulado A40G', 'Volvo', 'VOLA40G99001', 1, '2026-03-30 15:10:00.000000', NULL),
-('Rolo Compactador CS56B', 'Caterpillar', 'CATCS56B22334', 1, '2026-04-18 10:00:00.000000', 'Verificação de vibração concluída.'),
-('Trator Agrícola 8R 370', 'John Deere', 'JD8R37000111', 1, '2026-04-12 08:00:00.000000', 'Uso principal no plantio.'),
-('Colheitadeira S790', 'John Deere', 'JDS79000222', 1, '2026-01-05 14:00:00.000000', 'Revisada antes da safra.'),
-('Pulverizador 4730', 'John Deere', 'JD473000333', 1, '2026-03-22 09:30:00.000000', NULL),
-('Retroescavadeira B730', 'Bobcat', 'BOB730X44556', 1, '2026-04-02 11:00:00.000000', 'Equipamento versátil em obras urbanas.'),
-('Minicarregadeira S650', 'Bobcat', 'BOBS650Y77889', 1, '2026-03-18 16:00:00.000000', 'Pneus trocados recentemente.'),
-('Manipulador Telescópico T40.180', 'Bobcat', 'BOBT4018099', 2, '2026-02-28 10:45:00.000000', 'Em manutenção preventiva.'),
-('Miniescavadeira PC35MR', 'Komatsu', 'KOM35MR1122', 1, '2026-04-20 13:00:00.000000', NULL),
-('Escavadeira EC140', 'Volvo', 'VOLEC1405566', 1, '2026-03-10 11:15:00.000000', 'Operando em terreno rochoso.'),
-('Plantadeira DB40', 'John Deere', 'JDDB4088990', 1, '2026-02-10 08:20:00.000000', 'Discos de corte alinhados.'),
-('Compactador de Solo SP56', 'Caterpillar', 'CATSP5600112', 1, '2026-04-15 15:00:00.000000', NULL);
+('Esteira Profissional Integrity', 'Life Fitness', 'LIFEST98231', 1, '2026-04-10 08:30:00.000000', 'Lubrificação da lona e calibração realizadas.'),
+('Bicicleta Ergométrica Upright', 'Technogym', 'TEC200Y12345', 1, '2026-03-15 14:00:00.000000', 'Funcionamento normal.'),
+('Elíptico Cross Trainer', 'Precor', 'PRE220Z55443', 2, '2026-05-01 10:15:00.000000', 'Aguardando peças para o painel digital.'),
+('Supino Reto Convergente', 'Hammer Strength', 'HAM140K77889', 1, '2026-02-20 09:00:00.000000', NULL),
+('Multi Estação 8 Torres', 'Matrix', 'MAT380A99887', 1, '2026-01-10 16:45:00.000000', 'Ótimo estado de conservação.'),
+('Cadeira Extensora', 'Precor', 'PRE120B11223', 1, '2026-04-25 11:30:00.000000', NULL),
+('Leg Press 45 Graus', 'Hammer Strength', 'HAMD6T33445', 1, '2026-04-05 07:00:00.000000', 'Lubrificação dos trilhos recente.'),
+('Puxador Alto / Remada Baixa', 'Technogym', 'TEC65EX66778', 2, '2026-02-14 13:20:00.000000', 'Manutenção corretiva no cabo de aço.'),
+('Máquina de Smith', 'Precor', 'PREA40G99001', 1, '2026-03-30 15:10:00.000000', NULL),
+('Cadeira Flexora', 'Life Fitness', 'LIFCS56B22334', 1, '2026-04-18 10:00:00.000000', 'Ajuste de estofado concluído.'),
+('Esteira Run Personal', 'Technogym', 'TEC8R37000111', 1, '2026-04-12 08:00:00.000000', 'Uso principal na área cardiovascular.'),
+('Bike Indoor Spinning', 'Technogym', 'TECS79000222', 1, '2026-01-05 14:00:00.000000', 'Revisada antes das aulas de grupo.'),
+('Scrum / Gaiola de Agachamento', 'Technogym', 'TEC473000333', 1, '2026-03-22 09:30:00.000000', NULL),
+('Remador Indoor Concept2', 'Matrix', 'MAT730X44556', 1, '2026-04-02 11:00:00.000000', 'Equipamento muito disputado.'),
+('Abdutor / Adutor Combinado', 'Matrix', 'MATS650Y77889', 1, '2026-03-18 16:00:00.000000', 'Cabos tensionados recentemente.'),
+('Gaiola de Crossfit Completa', 'Matrix', 'MATT4018099', 2, '2026-02-28 10:45:00.000000', 'Em manutenção preventiva nas fixações de solo.'),
+('Elevação Lateral de Ombros', 'Technogym', 'TEC35MR1122', 1, '2026-04-20 13:00:00.000000', NULL),
+('Desenvolvimento para Ombros', 'Precor', 'PREEC1405566', 1, '2026-03-10 11:15:00.000000', 'Operando perfeitamente.'),
+('Banco Ajustável Reforçado', 'Technogym', 'TECDB4088990', 1, '2026-02-10 08:20:00.000000', 'Pinos de regulagem alinhados.'),
+('Graviton (Pull-up/Dip Assistido)', 'Life Fitness', 'LIFSP5600112', 1, '2026-04-15 15:00:00.000000', NULL);
 
 -- --------------------------------------------------------
 
